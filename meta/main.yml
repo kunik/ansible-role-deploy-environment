@@ -13,4 +13,4 @@ galaxy_info:
   - web
   - deployment
 dependencies:
-  - laggyluke.direnv
+  - laggyluke.direnv,v0.2.0
