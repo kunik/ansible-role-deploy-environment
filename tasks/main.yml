@@ -1,0 +1,15 @@
+---
+- name: define fact
+  set_fact: >
+    deploy_with_environment=True
+
+- name: generate .envrc
+  template: >
+    src=envrc.j2
+    dest='{{ deploy_release_dir }}/.envrc'
+    mode=0644
+
+- name: allow .envrc
+  command: >
+    /usr/local/bin/direnv allow
+    chdir={{ deploy_release_dir }}

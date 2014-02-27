@@ -1,0 +1,4 @@
+export PATH="./node_modules/.bin:$PATH"
+{% for k, v in deploy_environment.iteritems() %}
+export {{ k }}='{{ v }}'
+{% endfor %}
