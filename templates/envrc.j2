@@ -1,4 +1,7 @@
-export PATH="./node_modules/.bin:$PATH"
+export PATH="./bin:./node_modules/.bin:$PATH"
+{% if deploy_tmp_dir is defined %}
+export TMPDIR="{{ deploy_tmp_dir }}"
+{% endif %}
 {% for k, v in deploy_environment.iteritems() %}
 export {{ k }}='{{ v }}'
 {% endfor %}
