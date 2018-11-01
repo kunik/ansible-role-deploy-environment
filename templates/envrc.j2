@@ -10,6 +10,6 @@ export LC_CTYPE="en_US.UTF-8"
 {% if deploy_tmp_dir is defined %}
 export TMPDIR="{{ deploy_tmp_dir }}"
 {% endif %}
-{% for k, v in deploy_environment.iteritems() %}
+{% for k, v in deploy_environment.items() %}
 export {{ k }}='{{ v }}'
 {% endfor %}
